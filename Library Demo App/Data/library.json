@@ -1,0 +1,97 @@
+[{
+        "bookTitle": "1984",
+        "author": "George Orwell",
+        "year": 1949,
+        "favorite": false,
+        "image": "1984",
+        "rating": 0,
+        "content":
+
+
+            [{
+                    "pageNum": 1,
+                    "page": "this is page 1, 1984"
+                },
+                {
+                    "pageNum": 2,
+                    "page": "this is page 2, 1984"
+                },
+                {
+                    "pageNum": 3,
+                    "page": "this is page 3, 1984"
+                }
+            ]
+    },
+    {
+        "bookTitle": "Dracula",
+        "author": "Bram Stoker",
+        "year": 1897,
+        "favorite": false,
+        "image": "dracula",
+        "rating": 0,
+        "content":
+
+
+            [{
+                    "pageNum": 1,
+                    "page": "this is page 1, Dracula"
+                },
+                {
+                    "pageNum": 2,
+                    "page": "this is page 2, Dracula"
+                },
+                {
+                    "pageNum": 3,
+                    "page": "this is page 3, Dracula"
+                }
+            ]
+    },
+    {
+        "bookTitle": "Through the Looking Glass",
+        "author": "Lewis Carroll",
+        "year": 1871,
+        "favorite": false,
+        "image": "throughthelookingglass",
+        "rating": 0,
+        "content":
+
+
+            [{
+                    "pageNum": 1,
+                    "page": "this is page 1, Alice"
+                },
+                {
+                    "pageNum": 2,
+                    "page": "this is page 2, Alice"
+                },
+                {
+                    "pageNum": 3,
+                    "page": "this is page 3, Alice"
+                }
+            ]
+    },
+    {
+        "bookTitle": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "year": 1960,
+        "favorite": false,
+        "image": "tokillamockingbird",
+        "rating": 0,
+        "content":
+
+
+            [{
+                    "pageNum": 1,
+                    "page": "this is page 1, Mockingbird"
+                },
+                {
+                    "pageNum": 2,
+                    "page": "this is page 2, Mockingbird"
+                },
+                {
+                    "pageNum": 3,
+                    "page": "this is page 3, Mockingbird"
+                }
+            ]
+    }
+]
