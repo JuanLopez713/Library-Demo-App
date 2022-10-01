@@ -10,6 +10,7 @@ import SwiftUI
 struct BookListView: View {
 //    @ObservedObject var bookList = BookModel();
     @EnvironmentObject var bookList: BookModel
+
     var body: some View {
         NavigationView {
             VStack {
@@ -22,12 +23,17 @@ struct BookListView: View {
                                 // MARK: Row Item
 
                                 VStack(spacing: 20.0) {
-                                    Image(book.image)
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 200, alignment: .center)
-                                        .cornerRadius(10)
-
+                                    ZStack(alignment: .topTrailing) {
+                                        Image(book.image)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 200, alignment: .center)
+                                            .cornerRadius(10)
+                                        Image(systemName: book.favorite ? "bookmark.fill" : "")
+                                            .foregroundColor(.yellow)
+                                            .font(.title)
+                                            .padding(5)
+                                    }
                                     Text(book.bookTitle)
                                         .foregroundColor(.black)
                                         .font(.title3)

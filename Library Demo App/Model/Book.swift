@@ -7,14 +7,13 @@
 
 import Foundation
 
-class Book: Identifiable, Decodable{
-    
+class Book: Identifiable, Decodable {
     var id: UUID?
     var bookTitle: String
     var author: String
     var year: Int
     var favorite: Bool
-    var image:String
+    var image: String
     var rating: Int
     var content: [Page]
 }

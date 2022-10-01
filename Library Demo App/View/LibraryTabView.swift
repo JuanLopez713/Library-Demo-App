@@ -12,7 +12,7 @@ struct LibraryTabView: View {
         TabView {
             BookListView().tabItem {
                 VStack {
-                    Image(systemName: "star.fill")
+                    Image(systemName: "books.vertical.fill")
                     Text("Books")
                 }
             }

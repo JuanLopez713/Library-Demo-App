@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct BookDetailView: View {
+    @EnvironmentObject var bookList: BookModel
     var book: Book
     @State var isFavorite = false
+    @State var ratingPicked = 0
+
+    @State var uiTabarController: UITabBarController?
     var body: some View {
         GeometryReader { geo in
             VStack {
@@ -26,30 +30,33 @@ struct BookDetailView: View {
                 }
                 Button(action: {
                     BookHelper.favoriteBook(book: book)
-                    setFavorite()
+                    bookList.objectWillChange.send()
+                    isFavorite = book.favorite
                 }, label: {
-                    if isFavorite {
-                        Image(systemName: "star.fill")
-                    } else {
-                        Image(systemName: "star")
-                    }
+                    Image(systemName: isFavorite ? "bookmark.circle.fill" : "bookmark.circle")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.yellow)
+                        .onAppear { isFavorite = book.favorite }
+
                 })
 
-            }.onAppear{setFavorite()}
+                RatingSystem(book: book, rating: $ratingPicked)
+                    .foregroundColor(.red)
+                    .font(.title)
+                    .onAppear { ratingPicked = book.rating }
+            }
             .frame(width: geo.size.width)
-        }
-    }
-    func setFavorite(){
-        isFavorite = book.favorite
+
+        }.navigationBarTitle("Title", displayMode: .inline)
     }
 }
-
-
 
 struct BookDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let bookList = BookModel()
         let firstBook = bookList.books[0]
         BookDetailView(book: firstBook)
+            .environmentObject(BookModel())
     }
 }
